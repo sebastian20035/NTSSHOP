@@ -38,7 +38,7 @@ header
     color: var(--green);
     font-size: 15pt;
     border-bottom: 1px solid var(--white);
-    
+    text-decoration: none;
 }
 
 .input-search {
@@ -75,11 +75,14 @@ nav ul
 nav ul li a
 {
     color: var(--green);
+    text-decoration: none;
 }
 
 nav ul li a:hover
 {
     border-bottom: 3px solid var(--white);
+    text-decoration: none;
+    color: white;
 }
 
 .slider
