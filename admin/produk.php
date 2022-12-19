@@ -10,7 +10,7 @@
             <th>aksi</th>
         </tr>
     </thead>
-    <body>
+    <tbody>
         <?php $nomor=1; ?>
         <?php $ambil = $koneksi->query("SELECT * FROM produk"); ?>
         <?php while($pecah = $ambil->fetch_assoc()) { ?>
@@ -26,5 +26,5 @@
         </tr>
         <?php $nomor++; ?>
         <?php } ?>
-    </body>
+    </tbody>
 </table>

@@ -51,7 +51,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     <li><a href="index.php"><i class="fa fa-dashboard fa-3x"></i> Home</a></li>
                     <li><a href="index.php?halaman=produk"><i class="fa fa-dashboard fa-3x"></i> Produk</a></li>
                     <li><a href="index.php?halaman=pembelian"><i class="fa fa-dashboard fa-3x"></i> Pembelian</a></li>
-                    <li><a href="index.php?halaman=pelanggan"><i class="fa fa-dashboard fa-3x"></i> User</a></li>
+                    <li><a href="index.php?halaman=user"><i class="fa fa-dashboard fa-3x"></i> User</a></li>
                     <li><a href="index.php?halaman=logout"><i class="fa fa-dashboard fa-3x"></i> Logout</a></li>
                 </ul>
 
