@@ -29,9 +29,9 @@ header
     font-weight: bold;
     top: 0;
 
-    /* align-items: center;
+    align-items: center;
     font-size: 15pt;
-    justify-content: center; */
+    justify-content: center; 
 }
 
 .title {
