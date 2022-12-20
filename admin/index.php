@@ -1,6 +1,6 @@
 ﻿<?php 
 //koneksi DB
-$koneksi = new mysqli("localhost","root","","ntsshop");
+$koneksi = mysqli_connect("localhost","root","","pemweb");
 ?>
 
 <!DOCTYPE html>
@@ -72,6 +72,12 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     }
                     elseif ($_GET['halaman']=="user"){
                         include 'user.php';
+                    }
+                    elseif ($_GET['halaman']=="detail"){
+                        include 'detail.php';
+                    }
+                    elseif ($_GET['halaman']=="tambahproduk"){
+                        include 'tambahproduk.php';
                     }
                 }
                 else
