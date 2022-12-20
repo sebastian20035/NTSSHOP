@@ -20,7 +20,7 @@
             <td><?php echo $pecah['harga_produk']; ?></td>
             <td><?php echo $pecah['nominal_produk']; ?></td>
             <td>
-                <a href="" class="btn-danger btn">hapus</a>
+                <a href="index.php?halaman=hapusproduk&id=<?php echo $pecah['id_produk']?>" class="btn-danger btn">hapus</a>
                 <a href="" class="btn-warning btn">ubah</a>
             </td>
         </tr>
