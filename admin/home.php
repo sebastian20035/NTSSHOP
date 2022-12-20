@@ -1,1 +1,2 @@
-<h1>Halo gaes</h1>
+<h2>Selamat Datang Admin</h2>
+<pre><?php print_r($_SESSION); ?></pre>

@@ -1,6 +1,17 @@
 ﻿<?php 
+
+session_start();
 //koneksi DB
 $koneksi = mysqli_connect("localhost","root","","pemweb");
+
+
+if (!isset($_SESSION['admin']))
+{
+    echo "<script>alert('anda harus login');</script>";
+    echo "<script>location='login.php';</script>";
+    header('location:login.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,6 +95,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     }
                     elseif ($_GET['halaman']=="ubahproduk"){
                         include 'ubahproduk.php';
+                    }
+                    elseif ($_GET['halaman']=="logout"){
+                        include 'logout.php';
                     }
                 }
                 else
