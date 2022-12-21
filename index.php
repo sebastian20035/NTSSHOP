@@ -28,7 +28,6 @@ $koneksi = new mysqli("localhost","root","","pemweb");
           <li><a href="#" aria-current="Page" style="color: rgb(253, 132, 31)">BERANDA</a></li>
           <li><a href="produk.php">PRODUK</a></li>
           <li><a href="contact.html">HUBUNGI KAMI</a></li>
-          <li><a href="checkout.php">CHECKOUT</a></li>
           <!-- Kondisi sudah login -->
           <?php if (isset($_SESSION["user"])):?>
             <li><a href="logout.php">LOGOUT</a></li>
@@ -68,7 +67,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
       <div class="mlbb">
         <div class="link">
-          <a href="#harga-mlbb">
+          <a href="ml.php">
             <img src="./images/mlbb.jpg" alt="" />
             <div class="judul-produk">Mobile Legends</div>
           </a>
@@ -77,7 +76,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
       <div class="pubgm">
         <div class="link">
-          <a href="#harga-pubgm">
+          <a href="pubg.php">
             <img src="./images/pubgm.jpg" alt="" />
             <div class="judul-produk">PUBG Mobile</div>
           </a>
@@ -86,7 +85,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
       <div class="valo">
         <div class="link">
-          <a href="#harga-valo">
+          <a href="valo.php">
             <img src="./images/valorant.jpg" alt="" />
             <div class="judul-produk">Valorant</div>
           </a>
@@ -95,7 +94,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
       <div class="genshin">
         <div class="link">
-          <a href="#harga-genshin">
+          <a href="genshin.php">
             <img src="./images/GenshinImpact.jpg" alt="" />
             <div class="judul-produk">Genshin Impact</div>
           </a>
@@ -104,7 +103,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
       <div class="hdi">
         <div class="link">
-          <a href="#harga-hdi">
+          <a href="hdi.php">
             <img src="./images/higgs_domino.jpg" alt="" />
             <div class="judul-produk">Higgs Domino</div>
           </a>

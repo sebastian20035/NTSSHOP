@@ -3,25 +3,21 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>No</th>
-            <th>Nama Pelanggan</th>
-            <th>Tanggal</th>
-            <th>Total</th>
-            <th>Aksi</th>
+            <th>no</th>
+            <th>ID Game</th>
+            <th>Bukti Pembayaran</th>
         </tr>
     </thead>
 
     <tbody>
         <?php $nomor=1; ?>
-        <?php $ambil=$koneksi->query("SELECT * FROM pembelian JOIN user ON pembelian.id_user=user.id_user"); ?>
+        <?php $ambil=$koneksi->query("SELECT * FROM bukti"); ?>
         <?php while($pecah=$ambil->fetch_assoc()) { ?>
         <tr>
             <td><?php echo $nomor; ?></td>
-            <td><?php echo $pecah['nama_user']; ?></td>
-            <td><?php echo $pecah['tanggal_pembelian']; ?></td>
-            <td><?php echo $pecah['total_pembelian'] ?></td>
+            <td><?php echo $pecah['id_game']; ?></td>
             <td>
-                <a href="index.php?halaman=detail&id=<?php echo $pecah['id_pembelian']?>" class="btn btn-info">detail</a>
+                <img src="../bukti/<?php echo $pecah['bukti_pembayaran']; ?>" width="100px">
             </td>
         </tr>
         <?php $nomor++; ?>
