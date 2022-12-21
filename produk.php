@@ -1,5 +1,12 @@
+<?php 
+session_start();
+// koneksi DB
+$koneksi = new mysqli("localhost","root","","pemweb");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,16 +20,23 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <a href="/" class="title">NTSSHOP</a>
-        <input type="search" name="" id="" class="input-search" placeholder=" Cari sesuatu disini...">
-        <button type="submit" class="input-submit">CARI</button>
+        <h2>NTS SHOP</h2>
         <nav>
             <ul>
-                <li><a href="index.html">BERANDA</a></li>
-                <li><a href="#" aria-current="Page" style="color: rgb(253, 132, 31);">PRODUK</a></li>
+                <li><a href="index.php">BERANDA</a></li>
+                <li><a href="#" aria-current="Page" style="color: rgb(253, 132, 31)">PRODUK</a></li>
                 <li><a href="contact.html">HUBUNGI KAMI</a></li>
+                <li><a href="checkout.php">CHECKOUT</a></li>
+                <!-- Kondisi sudah login -->
+                <?php if (isset($_SESSION["user"])):?>
+                <li><a href="logout.php">LOGOUT</a></li>
+                <!-- Kondisi belum login -->
+                <?php else: ?>
+                <li><a href="login.php">LOGIN</a></li>
+                <?php endif ?>
             </ul>
         </nav>
     </header>
@@ -32,8 +46,8 @@
         <div class="ff">
             <div class="link">
                 <a href="#harga-ff">
-                        <img src="./images/ff.png" alt="">
-                        <div class="judul-produk">Free Fire</div>
+                    <img src="./images/ff.png" alt="">
+                    <div class="judul-produk">Free Fire</div>
                 </a>
             </div>
             <div class="overlay" id="harga-ff">
@@ -42,49 +56,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        70 Diamonds  : 
-                        <br>    
+                        70 Diamonds :
+                        <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        140 Diamonds : 
+                        140 Diamonds :
                         <br>
                         <span class="harga">Rp 20.000</span>
                         <br>
-                        210 Diamonds : 
+                        210 Diamonds :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        280 Diamonds : 
+                        280 Diamonds :
                         <br>
                         <span class="harga">Rp 40.000</span>
                         <br>
-                        355 Diamonds : 
+                        355 Diamonds :
                         <br>
                         <span class="harga">Rp 50.000</span>
                         <br>
-                        500 Diamond  : 
+                        500 Diamond :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        720 Diamonds : 
+                        720 Diamonds :
                         <br>
                         <span class="harga">Rp 100.000</span>
                         <br>
-                        1000 Diamonds : 
+                        1000 Diamonds :
                         <br>
                         <span class="harga">Rp 130.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -93,8 +106,8 @@
         <div class="mlbb">
             <div class="link">
                 <a href="#harga-mlbb">
-                        <img src="./images/mlbb.jpg" alt="">
-                        <div class="judul-produk">Mobile Legends</div>
+                    <img src="./images/mlbb.jpg" alt="">
+                    <div class="judul-produk">Mobile Legends</div>
                 </a>
             </div>
             <div class="overlay" id="harga-mlbb">
@@ -103,49 +116,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        86 Diamonds  : 
-                        <br>    
+                        86 Diamonds :
+                        <br>
                         <span class="harga">Rp 23.000</span>
                         <br>
-                        114 Diamonds : 
+                        114 Diamonds :
                         <br>
                         <span class="harga">Rp 28.000</span>
                         <br>
-                        172 Diamonds : 
+                        172 Diamonds :
                         <br>
                         <span class="harga">Rp 41.000</span>
                         <br>
-                        285 Diamonds : 
+                        285 Diamonds :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        344 Diamonds : 
+                        344 Diamonds :
                         <br>
                         <span class="harga">Rp 78.000</span>
                         <br>
-                        372 Diamond  : 
+                        372 Diamond :
                         <br>
                         <span class="harga">Rp 87.000</span>
                         <br>
-                        514 Diamonds : 
+                        514 Diamonds :
                         <br>
                         <span class="harga">Rp 120.000</span>
                         <br>
-                        1135 Diamonds : 
+                        1135 Diamonds :
                         <br>
                         <span class="harga">Rp 256.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -154,8 +166,8 @@
         <div class="pubgm">
             <div class="link">
                 <a href="#harga-pubgm">
-                        <img src="./images/pubgm.jpg" alt="">
-                        <div class="judul-produk">PUBG Mobile</div>
+                    <img src="./images/pubgm.jpg" alt="">
+                    <div class="judul-produk">PUBG Mobile</div>
                 </a>
             </div>
             <div class="overlay" id="harga-pubgm">
@@ -164,49 +176,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        52 UC  : 
-                        <br>    
+                        52 UC :
+                        <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        263 UC : 
+                        263 UC :
                         <br>
                         <span class="harga">Rp 20.000</span>
                         <br>
-                        525 UC : 
+                        525 UC :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        788 UC : 
+                        788 UC :
                         <br>
                         <span class="harga">Rp 40.000</span>
                         <br>
-                        1050 UC : 
+                        1050 UC :
                         <br>
                         <span class="harga">Rp 50.000</span>
                         <br>
-                        1375 UC  : 
+                        1375 UC :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        1900 UC : 
+                        1900 UC :
                         <br>
                         <span class="harga">Rp 100.000</span>
                         <br>
-                        2425 UC : 
+                        2425 UC :
                         <br>
                         <span class="harga">Rp 130.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068"
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -215,8 +226,8 @@
         <div class="coc">
             <div class="link">
                 <a href="#harga-coc">
-                        <img src="./images/coc.jpg" alt="">
-                        <div class="judul-produk">Clash Of Clans</div>
+                    <img src="./images/coc.jpg" alt="">
+                    <div class="judul-produk">Clash Of Clans</div>
                 </a>
             </div>
             <div class="overlay" id="harga-coc">
@@ -225,41 +236,40 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        300 VP  : 
-                        <br>    
+                        300 VP :
+                        <br>
                         <span class="harga">Rp 34.000</span>
                         <br>
-                        700 VP : 
+                        700 VP :
                         <br>
                         <span class="harga">Rp 81.000</span>
                         <br>
-                        1125 VP : 
+                        1125 VP :
                         <br>
                         <span class="harga">Rp 116.000</span>
                         <br>
-                        1375 VP : 
+                        1375 VP :
                         <br>
                         <span class="harga">Rp 152.000</span>
                         <br>
-                        1950 VP : 
+                        1950 VP :
                         <br>
                         <span class="harga">Rp 194.000</span>
                         <br>
-                        2400 VP  : 
+                        2400 VP :
                         <br>
                         <span class="harga">Rp 250.000</span>
                         <br>
-                        3400 VP : 
+                        3400 VP :
                         <br>
                         <span class="harga">Rp 324.000</span>
                         <br>
-                        7000 VP : 
+                        7000 VP :
                         <br>
                         <span class="harga">Rp 646.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068"
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -268,8 +278,8 @@
         <div class="genshin">
             <div class="link">
                 <a href="#harga-genshin">
-                        <img src="./images/GenshinImpact.jpg" alt="">
-                        <div class="judul-produk">Genshin Impact</div>
+                    <img src="./images/GenshinImpact.jpg" alt="">
+                    <div class="judul-produk">Genshin Impact</div>
                 </a>
             </div>
             <div class="overlay" id="harga-genshin">
@@ -278,33 +288,32 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        60 GC  : 
-                        <br>    
+                        60 GC :
+                        <br>
                         <span class="harga">Rp 15.000</span>
                         <br>
-                        330 GC : 
+                        330 GC :
                         <br>
                         <span class="harga">Rp 65.000</span>
                         <br>
-                        1090 GC : 
+                        1090 GC :
                         <br>
                         <span class="harga">Rp 185.000</span>
                         <br>
-                        1440 GC : 
+                        1440 GC :
                         <br>
                         <span class="harga">Rp 405.000</span>
                         <br>
-                        3880 GC : 
+                        3880 GC :
                         <br>
                         <span class="harga">Rp 625.000</span>
                         <br>
-                        Blessing Walking  : 
+                        Blessing Walking :
                         <br>
                         <span class="harga">Rp 66.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -313,8 +322,8 @@
         <div class="hdi">
             <div class="link">
                 <a href="#harga-hdi">
-                        <img src="./images/higgs_domino.jpg" alt="">
-                        <div class="judul-produk">Higgs Domino</div>
+                    <img src="./images/higgs_domino.jpg" alt="">
+                    <div class="judul-produk">Higgs Domino</div>
                 </a>
             </div>
             <div class="overlay" id="harga-hdi">
@@ -323,37 +332,36 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        30M Koin Emas  : 
-                        <br>    
+                        30M Koin Emas :
+                        <br>
                         <span class="harga">Rp 5.000</span>
                         <br>
-                        60M Koin Emas : 
+                        60M Koin Emas :
                         <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        100M Koin Emas : 
+                        100M Koin Emas :
                         <br>
                         <span class="harga">Rp 15.000</span>
                         <br>
-                        200M Koin Emas : 
+                        200M Koin Emas :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        400M Koin Emas : 
+                        400M Koin Emas :
                         <br>
                         <span class="harga">Rp 60.000</span>
                         <br>
-                        2B Koin Emas  : 
+                        2B Koin Emas :
                         <br>
                         <span class="harga">Rp 250.000</span>
                         <br>
-                        4B Koin Emas : 
+                        4B Koin Emas :
                         <br>
                         <span class="harga">Rp 500.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -362,8 +370,8 @@
         <div class="stumble">
             <div class="link">
                 <a href="#harga-stumble">
-                        <img src="./images/stumble.png" alt="">
-                        <div class="judul-produk">Stumble Guys</div>
+                    <img src="./images/stumble.png" alt="">
+                    <div class="judul-produk">Stumble Guys</div>
                 </a>
             </div>
             <div class="overlay" id="harga-stumble">
@@ -372,37 +380,36 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        30M Koin Emas  : 
-                        <br>    
+                        30M Koin Emas :
+                        <br>
                         <span class="harga">Rp 5.000</span>
                         <br>
-                        60M Koin Emas : 
+                        60M Koin Emas :
                         <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        100M Koin Emas : 
+                        100M Koin Emas :
                         <br>
                         <span class="harga">Rp 15.000</span>
                         <br>
-                        200M Koin Emas : 
+                        200M Koin Emas :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        400M Koin Emas : 
+                        400M Koin Emas :
                         <br>
                         <span class="harga">Rp 60.000</span>
                         <br>
-                        2B Koin Emas  : 
+                        2B Koin Emas :
                         <br>
                         <span class="harga">Rp 250.000</span>
                         <br>
-                        4B Koin Emas : 
+                        4B Koin Emas :
                         <br>
                         <span class="harga">Rp 500.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -414,8 +421,8 @@
         <div class="pb">
             <div class="link">
                 <a href="#harga-pb">
-                        <img src="./images/pb.jpg" alt="">
-                        <div class="judul-produk">Point Blank</div>
+                    <img src="./images/pb.jpg" alt="">
+                    <div class="judul-produk">Point Blank</div>
                 </a>
             </div>
             <div class="overlay" id="harga-pb">
@@ -424,49 +431,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        70 Diamonds  : 
-                        <br>    
+                        70 Diamonds :
+                        <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        140 Diamonds : 
+                        140 Diamonds :
                         <br>
                         <span class="harga">Rp 20.000</span>
                         <br>
-                        210 Diamonds : 
+                        210 Diamonds :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        280 Diamonds : 
+                        280 Diamonds :
                         <br>
                         <span class="harga">Rp 40.000</span>
                         <br>
-                        355 Diamonds : 
+                        355 Diamonds :
                         <br>
                         <span class="harga">Rp 50.000</span>
                         <br>
-                        500 Diamond  : 
+                        500 Diamond :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        720 Diamonds : 
+                        720 Diamonds :
                         <br>
                         <span class="harga">Rp 100.000</span>
                         <br>
-                        1000 Diamonds : 
+                        1000 Diamonds :
                         <br>
                         <span class="harga">Rp 130.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -475,8 +481,8 @@
         <div class="apex">
             <div class="link">
                 <a href="#harga-apex">
-                        <img src="./images/apex.jpg" alt="">
-                        <div class="judul-produk">Apex Legends</div>
+                    <img src="./images/apex.jpg" alt="">
+                    <div class="judul-produk">Apex Legends</div>
                 </a>
             </div>
             <div class="overlay" id="harga-apex">
@@ -485,49 +491,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        86 Diamonds  : 
-                        <br>    
+                        86 Diamonds :
+                        <br>
                         <span class="harga">Rp 23.000</span>
                         <br>
-                        114 Diamonds : 
+                        114 Diamonds :
                         <br>
                         <span class="harga">Rp 28.000</span>
                         <br>
-                        172 Diamonds : 
+                        172 Diamonds :
                         <br>
                         <span class="harga">Rp 41.000</span>
                         <br>
-                        285 Diamonds : 
+                        285 Diamonds :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        344 Diamonds : 
+                        344 Diamonds :
                         <br>
                         <span class="harga">Rp 78.000</span>
                         <br>
-                        372 Diamond  : 
+                        372 Diamond :
                         <br>
                         <span class="harga">Rp 87.000</span>
                         <br>
-                        514 Diamonds : 
+                        514 Diamonds :
                         <br>
                         <span class="harga">Rp 120.000</span>
                         <br>
-                        1135 Diamonds : 
+                        1135 Diamonds :
                         <br>
                         <span class="harga">Rp 256.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -536,8 +541,8 @@
         <div class="csgo">
             <div class="link">
                 <a href="#harga-csgo">
-                        <img src="./images/csgo.png" alt="">
-                        <div class="judul-produk">Counter Strike</div>
+                    <img src="./images/csgo.png" alt="">
+                    <div class="judul-produk">Counter Strike</div>
                 </a>
             </div>
             <div class="overlay" id="harga-csgo">
@@ -546,49 +551,48 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        52 UC  : 
-                        <br>    
+                        52 UC :
+                        <br>
                         <span class="harga">Rp 10.000</span>
                         <br>
-                        263 UC : 
+                        263 UC :
                         <br>
                         <span class="harga">Rp 20.000</span>
                         <br>
-                        525 UC : 
+                        525 UC :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        788 UC : 
+                        788 UC :
                         <br>
                         <span class="harga">Rp 40.000</span>
                         <br>
-                        1050 UC : 
+                        1050 UC :
                         <br>
                         <span class="harga">Rp 50.000</span>
                         <br>
-                        1375 UC  : 
+                        1375 UC :
                         <br>
                         <span class="harga">Rp 70.000</span>
                         <br>
-                        1900 UC : 
+                        1900 UC :
                         <br>
                         <span class="harga">Rp 100.000</span>
                         <br>
-                        2425 UC : 
+                        2425 UC :
                         <br>
                         <span class="harga">Rp 130.000</span>
                         <br>
-                        M. Mingguan  : 
+                        M. Mingguan :
                         <br>
                         <span class="harga">Rp 30.000</span>
                         <br>
-                        M. Bulanan   : 
+                        M. Bulanan :
                         <br>
                         <span class="harga">Rp 150.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068"
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -597,8 +601,8 @@
         <div class="valo">
             <div class="link">
                 <a href="#harga-valo">
-                        <img src="./images/valorant.jpg" alt="">
-                        <div class="judul-produk">Valorant</div>
+                    <img src="./images/valorant.jpg" alt="">
+                    <div class="judul-produk">Valorant</div>
                 </a>
             </div>
             <div class="overlay" id="harga-valo">
@@ -607,41 +611,40 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        300 VP  : 
-                        <br>    
+                        300 VP :
+                        <br>
                         <span class="harga">Rp 34.000</span>
                         <br>
-                        700 VP : 
+                        700 VP :
                         <br>
                         <span class="harga">Rp 81.000</span>
                         <br>
-                        1125 VP : 
+                        1125 VP :
                         <br>
                         <span class="harga">Rp 116.000</span>
                         <br>
-                        1375 VP : 
+                        1375 VP :
                         <br>
                         <span class="harga">Rp 152.000</span>
                         <br>
-                        1950 VP : 
+                        1950 VP :
                         <br>
                         <span class="harga">Rp 194.000</span>
                         <br>
-                        2400 VP  : 
+                        2400 VP :
                         <br>
                         <span class="harga">Rp 250.000</span>
                         <br>
-                        3400 VP : 
+                        3400 VP :
                         <br>
                         <span class="harga">Rp 324.000</span>
                         <br>
-                        7000 VP : 
+                        7000 VP :
                         <br>
                         <span class="harga">Rp 646.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068"
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -650,8 +653,8 @@
         <div class="overwatch">
             <div class="link">
                 <a href="#harga-overwatch">
-                        <img src="./images/overwatch.jpg" alt="">
-                        <div class="judul-produk">Overwatch</div>
+                    <img src="./images/overwatch.jpg" alt="">
+                    <div class="judul-produk">Overwatch</div>
                 </a>
             </div>
             <div class="overlay" id="harga-overwatch">
@@ -660,33 +663,32 @@
                     <a class="close" href="#populer">&times;</a>
                     <br>
                     <div class="content">
-                        60 GC  : 
-                        <br>    
+                        60 GC :
+                        <br>
                         <span class="harga">Rp 15.000</span>
                         <br>
-                        330 GC : 
+                        330 GC :
                         <br>
                         <span class="harga">Rp 65.000</span>
                         <br>
-                        1090 GC : 
+                        1090 GC :
                         <br>
                         <span class="harga">Rp 185.000</span>
                         <br>
-                        1440 GC : 
+                        1440 GC :
                         <br>
                         <span class="harga">Rp 405.000</span>
                         <br>
-                        3880 GC : 
+                        3880 GC :
                         <br>
                         <span class="harga">Rp 625.000</span>
                         <br>
-                        Blessing Walking  : 
+                        Blessing Walking :
                         <br>
                         <span class="harga">Rp 66.000</span>
                         <br>
-                        <a class="pesan" href="https://wa.me/6287816626068" 
-                        target="_blank" 
-                        rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
+                        <a class="pesan" href="https://wa.me/6287816626068" target="_blank"
+                            rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -708,4 +710,5 @@
     </div>
 
 </body>
+
 </html>

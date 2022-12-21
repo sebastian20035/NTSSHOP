@@ -1,5 +1,7 @@
 <h2>DATA PRODUK</h2>
+<br>
 
+<a href="index.php?halaman=tambahproduk" class="btn btn-primary" style="margin-bottom: 20px; margin-left: 90%">Tambah Data</a>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -28,4 +30,3 @@
         <?php } ?>
     </tbody>
 </table>
-<a href="index.php?halaman=tambahproduk" class="btn btn-primary">Tambah Data</a>

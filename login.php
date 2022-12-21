@@ -36,7 +36,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
                             <label>Password</label>
                             <input type="password" class="form-control" name="password">
                         </div>
-                        <button class="btn btn-primary" name="simpan">Login</button>
+                        <button class="btn btn-primary" name="login">Login</button>
                     </form>
                 </div>
             </div>
@@ -46,7 +46,7 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
 <?php 
 
-if (isset($_POST['simpan']))
+if (isset($_POST['login']))
 {
     $email = $_POST['email'];
     $password = $_POST['password'];

@@ -5,10 +5,6 @@
 $ambil=$koneksi->query("SELECT * FROM produk WHERE id_produk='$_GET[id]'");
 $pecah=$ambil->fetch_assoc();
 
-echo "<pre>";
-print_r($pecah);
-echo "</pre>";
-
 ?>
 
 <form method="post" enctype="multipart/form-data">

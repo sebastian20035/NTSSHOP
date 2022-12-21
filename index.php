@@ -22,16 +22,20 @@ $koneksi = new mysqli("localhost","root","","pemweb");
 
   <body>
     <header>
-      <a href="/" class="title">NTSSHOP</a>
-      <input type="search" name="" id="" class="input-search" placeholder=" Cari sesuatu disini..." />
-      <button type="submit" class="input-submit">CARI</button>
+      <h2>NTS SHOP</h2>
       <nav>
         <ul>
           <li><a href="#" aria-current="Page" style="color: rgb(253, 132, 31)">BERANDA</a></li>
-          <li><a href="produk.html">PRODUK</a></li>
-          <li><a href="/contact.html">HUBUNGI KAMI</a></li>
+          <li><a href="produk.php">PRODUK</a></li>
+          <li><a href="contact.html">HUBUNGI KAMI</a></li>
           <li><a href="checkout.php">CHECKOUT</a></li>
-          <li><a href="login.php">LOGIN</a></li>
+          <!-- Kondisi sudah login -->
+          <?php if (isset($_SESSION["user"])):?>
+            <li><a href="logout.php">LOGOUT</a></li>
+          <!-- Kondisi belum login -->
+          <?php else: ?>
+            <li><a href="login.php">LOGIN</a></li>
+          <?php endif ?>
         </ul>
       </nav>
     </header>
